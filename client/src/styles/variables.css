@@ -13,9 +13,9 @@
 
   --border: #e5e7eb;
 
-  --radius: 14px;
+  --radius: 16px;
 
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-  --transition: 0.25s ease;
+  --transition: all 0.25s ease;
 }

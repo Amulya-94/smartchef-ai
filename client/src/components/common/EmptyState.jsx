@@ -1,11 +1,17 @@
+import { FaUtensils } from "react-icons/fa";
+
 function EmptyState() {
   return (
-    <div>
-      <h2>No recipe yet</h2>
+    <section className="card empty-state">
+      <FaUtensils size={48} />
+
+      <h2>No Recipe Yet</h2>
+
       <p>
-        Enter your available ingredients and generate an interactive recipe.
+        Enter your available ingredients above and click{" "}
+        <strong>Generate Recipe</strong> to create a personalized meal.
       </p>
-    </div>
+    </section>
   );
 }
 
