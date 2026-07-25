@@ -1,22 +1,30 @@
+import { generateRecipeFromAI } from "../services/recipeService.js";
+
 export const generateRecipe = async (req, res) => {
   try {
-    console.log("📥 Request Body:", req.body);
-
     const { ingredients } = req.body;
 
-    res.status(200).json({
-      success: true,
-      message: "Recipe endpoint is working!",
-      data: {
-        ingredients,
-      },
-    });
-  } catch (error) {
-    console.error("❌ Error:", error);
+    if (!ingredients || ingredients.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "Ingredients are required.",
+      });
+    }
 
-    res.status(500).json({
+    const recipe = await generateRecipeFromAI(ingredients);
+
+    return res.status(200).json({
+      success: true,
+      recipe,
+    });
+
+  } catch (error) {
+    console.error("Gemini Error:", error);
+    console.error("Error Message:", error.message);
+
+    return res.status(500).json({
       success: false,
-      message: "Internal Server Error",
+      message: "Failed to generate recipe.",
     });
   }
 };

@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import "./config/gemini.js";
 import recipeRoutes from "./routes/recipeRoutes.js";
 
 const app = express();
