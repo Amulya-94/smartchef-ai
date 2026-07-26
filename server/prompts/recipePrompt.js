@@ -4,29 +4,44 @@ You are a professional chef.
 Using ONLY these ingredients:
 ${ingredients.join(", ")}
 
-Generate ONE recipe.
+Generate ONE simple recipe.
 
 Return ONLY valid JSON.
 
-Use this exact structure:
+The response MUST follow EXACTLY this schema:
 
 {
-  "title": "",
-  "description": "",
+  "title": "Recipe Name",
+  "description": "Short description",
   "servings": 2,
-  "prepTime": "",
-  "cookTime": "",
-  "ingredients": [],
-  "steps": [],
-  "ingredientSwaps": []
+  "prepTime": "10 minutes",
+  "cookTime": "20 minutes",
+  "ingredients": [
+    {
+      "name": "Ingredient Name",
+      "quantity": "Amount"
+    }
+  ],
+  "steps": [
+    "Step 1",
+    "Step 2"
+  ],
+  "ingredientSwaps": [
+    "Optional swap"
+  ]
 }
 
-Rules:
-- Do not return markdown.
-- Do not use \`\`\`json.
-- Return valid JSON only.
+IMPORTANT RULES:
+- Return ONLY valid JSON.
+- Do NOT use markdown.
+- Do NOT use \`\`\`json.
+- Do NOT include explanations.
+- Use ONLY the provided ingredients whenever possible.
 - Keep the recipe simple.
-- Use only the provided ingredients whenever possible.
+- Ingredients MUST ALWAYS be an array of objects with "name" and "quantity".
+- Never return ingredients as strings.
+- Steps MUST ALWAYS be an array of strings.
+- ingredientSwaps MUST ALWAYS be an array (use [] if there are no swaps).
 `;
 
 export default recipePrompt;
