@@ -275,7 +275,11 @@ Approximate development time: **8 hours**
 This project was developed for educational purposes as part of a Frontend Internship Assignment.
 
 ---
+## Live Demo
 
+**Application:** https://smartchef-ai-frontend.onrender.com
+
+**Backend API:** https://smartchef-ai-z2ra.onrender.com
 ## Author
 
 **Amulya Jonnalagadda**
