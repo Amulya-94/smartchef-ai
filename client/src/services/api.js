@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/recipes",
+  baseURL: "https://smartchef-ai-z2ra.onrender.com/api/recipes",
 });
 
 export const generateRecipe = async (ingredients) => {
