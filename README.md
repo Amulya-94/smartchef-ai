@@ -1,14 +1,29 @@
 # SmartChef AI
 
-An AI-powered recipe generation web application that transforms a list of available ingredients into a structured, interactive recipe. Built with **React**, **Node.js**, **Express**, and the **Groq Llama 3.3 70B Versatile** language model, SmartChef AI focuses on converting unpredictable AI responses into a reliable and user-friendly experience.
+SmartChef AI is an AI-powered recipe generation web application that transforms a list of available ingredients into a structured, interactive recipe. Built using React, Node.js, Express.js, and the Groq Llama 3.3 70B Versatile language model, the application converts unpredictable AI responses into a reliable and user-friendly experience.
+
+This project was developed as part of a Frontend Internship Assignment with a focus on structured AI output, robust error handling, and interactive user interfaces.
+
+---
+
+## Live Demo
+
+**Frontend:**  
+https://smartchef-ai-frontend.onrender.com
+
+---
+
+## Demo Video
+
+https://drive.google.com/file/d/1v2dmWdFuwB2Liwl6RPnq3LLJPAD-hvq2/view?usp=sharing
 
 ---
 
 ## Overview
 
-SmartChef AI helps users make the most of the ingredients they already have by generating personalized recipes using a Large Language Model (LLM). Instead of displaying raw AI-generated text, the application parses structured JSON and renders it as interactive React components.
+SmartChef AI enables users to generate personalized recipes using ingredients they already have. Instead of displaying raw AI-generated text, the application requests structured JSON from a Large Language Model and renders the response as interactive React components.
 
-This project was developed as part of a **Frontend Internship Assignment**, with an emphasis on structured AI output, robust error handling, and interactive user experience.
+The application emphasizes reliability by validating AI responses, handling malformed outputs gracefully, preventing stale responses from overwriting newer requests, and providing loading, retry, and error states.
 
 ---
 
@@ -17,8 +32,9 @@ This project was developed as part of a **Frontend Internship Assignment**, with
 - AI-powered recipe generation
 - Free-form ingredient input
 - Structured JSON parsing and validation
-- Ingredient quantities and serving information
-- Step-by-step interactive cooking checklist
+- Recipe title, description, preparation time, cooking time, and serving size
+- Ingredient quantities
+- Interactive cooking checklist
 - Cooking progress tracker
 - Ingredient substitution suggestions
 - Loading, error, and empty states
@@ -31,6 +47,7 @@ This project was developed as part of a **Frontend Internship Assignment**, with
 ## Tech Stack
 
 ### Frontend
+
 - React.js
 - Vite
 - Axios
@@ -38,10 +55,12 @@ This project was developed as part of a **Frontend Internship Assignment**, with
 - CSS3
 
 ### Backend
+
 - Node.js
 - Express.js
 
 ### AI Integration
+
 - Groq API
 - Llama 3.3 70B Versatile
 
@@ -140,9 +159,9 @@ http://localhost:5173
 
 ## AI Integration
 
-SmartChef AI uses the **Groq API** with the **Llama 3.3 70B Versatile** language model to generate structured recipe data.
+SmartChef AI uses the Groq API with the Llama 3.3 70B Versatile language model to generate structured recipe data.
 
-The AI generates:
+The AI returns structured JSON containing:
 
 - Recipe title
 - Recipe description
@@ -153,13 +172,13 @@ The AI generates:
 - Step-by-step cooking instructions
 - Ingredient substitution suggestions
 
-The backend validates and parses the AI-generated JSON before sending it to the frontend, ensuring reliable rendering even when the model returns malformed or unexpected responses.
+The backend validates and parses the generated JSON before sending it to the frontend, ensuring reliable rendering even when the model returns malformed or unexpected responses.
 
 ---
 
-## Error Handling & Reliability
+## Error Handling and Reliability
 
-The application is designed to handle unreliable AI responses gracefully.
+The application is designed to gracefully handle unreliable AI responses.
 
 Implemented safeguards include:
 
@@ -170,7 +189,7 @@ Implemented safeguards include:
 - Retry functionality
 - Loading indicators
 - User-friendly error messages
-- Protection against stale API responses to prevent outdated results from replacing newer ones
+- Protection against stale API responses
 
 ---
 
@@ -196,7 +215,8 @@ The generated recipe includes:
 - Cooking time
 - Serving size
 - Ingredient quantities
-- Step-by-step cooking instructions
+- Interactive cooking checklist
+- Cooking progress tracker
 - Ingredient substitution suggestions
 
 ---
@@ -233,11 +253,11 @@ All implementation, integration, testing, debugging, and final development decis
 
 ## Known Limitations
 
-- Requires an active internet connection.
-- Recipe quality depends on the AI model's responses.
-- Generates one recipe per request.
-- Nutritional information is not currently provided.
-- AI responses may occasionally suggest common pantry ingredients when appropriate.
+- Requires an active internet connection
+- Recipe quality depends on the AI model's responses
+- Generates one recipe per request
+- Nutritional information is not currently provided
+- AI responses may occasionally suggest common pantry ingredients when appropriate
 
 ---
 
@@ -260,11 +280,11 @@ Approximate development time: **8 hours**
 
 | Task | Time |
 |------|------:|
-| Project setup | 45 minutes |
-| Frontend development | 2.5 hours |
-| Backend & AI integration | 2 hours |
-| Error handling & validation | 1 hour |
-| UI improvements | 45 minutes |
+| Project Setup | 45 minutes |
+| Frontend Development | 2.5 hours |
+| Backend and AI Integration | 2 hours |
+| Error Handling and Validation | 1 hour |
+| UI Improvements | 45 minutes |
 | Testing | 30 minutes |
 | Documentation | 30 minutes |
 
@@ -275,15 +295,12 @@ Approximate development time: **8 hours**
 This project was developed for educational purposes as part of a Frontend Internship Assignment.
 
 ---
-## Live Demo
 
-**Application:** https://smartchef-ai-frontend.onrender.com
-
-**Backend API:** https://smartchef-ai-z2ra.onrender.com
 ## Author
 
 **Amulya Jonnalagadda**
 
-B.Tech – Computer Science and Engineering
-
+B.Tech – Computer Science and Engineering  
 SRM University-AP
+
+GitHub: https://github.com/Amulya-94
