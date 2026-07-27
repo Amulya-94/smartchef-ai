@@ -1,35 +1,36 @@
-# 🍳 SmartChef AI
+# SmartChef AI
 
-An AI-powered recipe generation web application that creates personalized recipes from the ingredients available in your kitchen. Built with React, Node.js, Express, and the Groq LLM API, SmartChef AI delivers structured recipes with ingredient quantities, cooking instructions, preparation time, and serving information.
-
----
-
-## 📖 Overview
-
-SmartChef AI helps users reduce food waste by suggesting recipes based on the ingredients they already have. Users simply enter a list of available ingredients, and the application generates a complete recipe using an AI language model.
+An AI-powered recipe generation web application that transforms a list of available ingredients into a structured, interactive recipe. Built with **React**, **Node.js**, **Express**, and the **Groq Llama 3.3 70B Versatile** language model, SmartChef AI focuses on converting unpredictable AI responses into a reliable and user-friendly experience.
 
 ---
 
-## ✨ Features
+## Overview
+
+SmartChef AI helps users make the most of the ingredients they already have by generating personalized recipes using a Large Language Model (LLM). Instead of displaying raw AI-generated text, the application parses structured JSON and renders it as interactive React components.
+
+This project was developed as part of a **Frontend Internship Assignment**, with an emphasis on structured AI output, robust error handling, and interactive user experience.
+
+---
+
+## Features
 
 - AI-powered recipe generation
-- Structured recipe output
-- Ingredient quantities
-- Step-by-step cooking instructions
-- Preparation & cooking time estimation
-- Serving information
+- Free-form ingredient input
+- Structured JSON parsing and validation
+- Ingredient quantities and serving information
+- Step-by-step interactive cooking checklist
+- Cooking progress tracker
 - Ingredient substitution suggestions
-- Progress tracker with interactive checklist
+- Loading, error, and empty states
 - Retry mechanism for failed requests
-- Robust JSON validation and error handling
-- Responsive user interface
+- Protection against stale API responses
+- Responsive design for desktop and mobile devices
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
-
 - React.js
 - Vite
 - Axios
@@ -37,67 +38,72 @@ SmartChef AI helps users reduce food waste by suggesting recipes based on the in
 - CSS3
 
 ### Backend
-
 - Node.js
 - Express.js
-- Groq API (Llama 3.3 70B Versatile)
+
+### AI Integration
+- Groq API
+- Llama 3.3 70B Versatile
 
 ---
 
-## 🏗 Architecture
+## Project Structure
 
-```
-SmartChef-AI
+```text
+smartchef-ai/
 │
-├── client
-│   ├── assets
-│   ├── components
-│   ├── services
-│   ├── styles
-│   ├── App.jsx
-│   └── main.jsx
+├── client/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │
-├── server
-│   ├── config
-│   ├── controllers
-│   ├── prompts
-│   ├── routes
-│   ├── services
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── prompts/
+│   ├── routes/
+│   ├── services/
 │   └── server.js
+│
+├── screenshots/
 │
 └── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/SmartChef-AI.git
-cd SmartChef-AI
+git clone https://github.com/Amulya-94/smartchef-ai.git
+cd smartchef-ai
 ```
 
 ### Install Dependencies
 
-Frontend
+#### Backend
 
 ```bash
-cd client
+cd server
 npm install
 ```
 
-Backend
+#### Frontend
 
 ```bash
-cd ../server
+cd ../client
 npm install
 ```
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 Create a `.env` file inside the `server` directory.
 
@@ -108,23 +114,23 @@ PORT=5000
 
 ---
 
-## ▶ Running the Application
+## Running the Application
 
-Start the backend server
+### Start the Backend
 
 ```bash
 cd server
 npm run dev
 ```
 
-Start the frontend
+### Start the Frontend
 
 ```bash
 cd client
 npm run dev
 ```
 
-Open:
+Open the application in your browser:
 
 ```
 http://localhost:5173
@@ -132,9 +138,47 @@ http://localhost:5173
 
 ---
 
-## 📌 Example Input
+## AI Integration
 
-```
+SmartChef AI uses the **Groq API** with the **Llama 3.3 70B Versatile** language model to generate structured recipe data.
+
+The AI generates:
+
+- Recipe title
+- Recipe description
+- Preparation time
+- Cooking time
+- Serving size
+- Ingredient quantities
+- Step-by-step cooking instructions
+- Ingredient substitution suggestions
+
+The backend validates and parses the AI-generated JSON before sending it to the frontend, ensuring reliable rendering even when the model returns malformed or unexpected responses.
+
+---
+
+## Error Handling & Reliability
+
+The application is designed to handle unreliable AI responses gracefully.
+
+Implemented safeguards include:
+
+- Validation of AI-generated JSON
+- Detection of malformed or invalid responses
+- Handling of empty responses
+- Network and API error handling
+- Retry functionality
+- Loading indicators
+- User-friendly error messages
+- Protection against stale API responses to prevent outdated results from replacing newer ones
+
+---
+
+## Example
+
+### Input
+
+```text
 Chicken
 Rice
 Onion
@@ -142,9 +186,7 @@ Tomato
 Garlic
 ```
 
----
-
-## 📌 Example Output
+### Output
 
 The generated recipe includes:
 
@@ -154,54 +196,90 @@ The generated recipe includes:
 - Cooking time
 - Serving size
 - Ingredient quantities
-- Step-by-step instructions
-- Ingredient swap suggestions
+- Step-by-step cooking instructions
+- Ingredient substitution suggestions
 
 ---
 
-## 🛡 Error Handling
+## Screenshots
 
-The application includes comprehensive error handling for:
+### Home Page
 
-- Invalid AI responses
-- Malformed JSON
-- Empty responses
-- Network failures
-- API rate limits
-- Stale API requests
-- Loading and retry states
+![Home](screenshots/home.png)
+
+### Generated Recipe
+
+![Generated Recipe](screenshots/recipe.png)
+
+### Progress Tracker
+
+![Progress Tracker](screenshots/progress.png)
 
 ---
 
-## 📸 Screenshots
+## AI Development Assistance
 
-|
----![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+AI-assisted development tools were used to:
 
-## 🔮 Future Enhancements
+- Brainstorm the application architecture
+- Refine prompts for structured JSON generation
+- Debug React and Express implementation issues
+- Improve error handling strategies
+- Review and refine project documentation
 
-- Nutrition information
+All implementation, integration, testing, debugging, and final development decisions were completed and verified manually.
+
+---
+
+## Known Limitations
+
+- Requires an active internet connection.
+- Recipe quality depends on the AI model's responses.
+- Generates one recipe per request.
+- Nutritional information is not currently provided.
+- AI responses may occasionally suggest common pantry ingredients when appropriate.
+
+---
+
+## Future Enhancements
+
+- Nutritional information
 - Recipe image generation
-- Favourite recipes
+- Save favourite recipes
 - Shopping list generation
 - Cuisine-based filtering
 - Dietary preference support
 - Recipe history
+- Dark mode
 
 ---
 
-## 📄 License
+## Time Spent
 
-This project is intended for educational and internship evaluation purposes.
+Approximate development time: **8 hours**
+
+| Task | Time |
+|------|------:|
+| Project setup | 45 minutes |
+| Frontend development | 2.5 hours |
+| Backend & AI integration | 2 hours |
+| Error handling & validation | 1 hour |
+| UI improvements | 45 minutes |
+| Testing | 30 minutes |
+| Documentation | 30 minutes |
 
 ---
 
-## 👤 Author
+## License
+
+This project was developed for educational purposes as part of a Frontend Internship Assignment.
+
+---
+
+## Author
 
 **Amulya Jonnalagadda**
 
-B.Tech Computer Science and Engineering
+B.Tech – Computer Science and Engineering
 
 SRM University-AP
